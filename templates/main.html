@@ -145,23 +145,26 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a id="patient5" href="#">Patient 5</a></li>
-          <li><a id="patient6" href="#">Patient 6</a></li>
-          <li><a id="patient9" href="#">Patient 9</a></li>
+          <li><a id="patient5">Patient 5</a></li>
+          <li><a id="patient6">Patient 6</a></li>
+          <li><a id="patient9">Patient 9</a></li>
         </ul>
       </div>
 
       <div class="row">
-        <div id="glucose" class="widget col-sm-12 col-md-3 wow" data-animation-delay="100">
-          <div class="glocose-title">
-            <h5>Predicted glucose level</h5>
-          </div>
-          <div id="glucose-value">
-            <h1>104</h1>
-          </div>
-        </div>
         <div class="widget col-sm-12 col-md-8 wow" data-animation-delay="200">
           <div id="viz"></div>
+        </div>
+        <div id="glucose" class="widget col-sm-12 col-md-3 wow" data-animation-delay="100">
+          <div class="glocose-title">
+            <h5>Predicted glucose level (mg/dL)</h5>
+          </div>
+          <div id="glucose-value">
+            <div id="raw_value">
+              <h1 style="glucose-value">104</h1>
+            </div>
+            <h4 style="glucose-value">Next reading</h4>
+          </div>
         </div>
       </div>
     <!-- /.container -->
@@ -277,6 +280,7 @@
     <script src="static/js/script.js"></script>
     <!-- StikyMenu -->
     <script src="static/js/stickUp.min.js"></script>
+    <script type="text/javascript" src="static/js/viz.js"></script>
     <script type="text/javascript">
     jQuery(function($) {
       $(document).ready( function() {
@@ -285,23 +289,27 @@
       });
     });
 
-    $('#patient6').click(function(e) {
-      alert('alerted');
-        e.preventDefault();// prevent the default anchor functionality
-      });
-
     $('#patient5').click(function(e) {
-      alert('alerted');
-        e.preventDefault();// prevent the default anchor functionality
-      });
+      $.ajax({url: '/patient/5', success: function(result){
+        $( "#raw_value" ).html('<h1>' + result + '</h1>')
+        makeGraph('data2')
+      }});
+      e.preventDefault();// prevent the default anchor functionality
+    });
 
-
+    $('#patient6').click(function(e) {
+      $.ajax({url: '/patient/6', success: function(result){
+        $( "#raw_value" ).html('<h1>' + result + '</h1>')
+        makeGraph('data')
+      }});
+    });
 
     $('#patient9').click(function(e) {
-      alert('alerted');
-        e.preventDefault();// prevent the default anchor functionality
-      });
-
+      $.ajax({url: '/patient/9', success: function(result){
+        $( "#raw_value" ).html('<h1>' + result + '</h1>')
+        makeGraph('data2')
+      }});
+    });
     </script>
 
     <!-- Smoothscroll -->
@@ -310,7 +318,6 @@
     <script type="text/javascript" src="static/js/classie.js"></script>
     <script type="text/javascript" src="static/js/uiMorphingButton_inflow.js"></script>
     <script type="text/javascript" src="static/js/jquery.magnific-popup.js"></script>
-    <script type="text/javascript" src="static/js/viz.js"></script>
 
     <script>
       new WOW().init();
