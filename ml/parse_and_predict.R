@@ -99,21 +99,18 @@ make_next_prediction <- function(patient_number, is_post_meal = 0,
 			post_meal = rep(is_post_meal, 2),
 			pre_meal = rep(is_pre_meal, 2)))
 	dat_kw <- apply(dat[,2:5], 2, sd) * 2500
-	k_xx <- kernel_mat(dat[,2:5], dat[,2:5], kw = dat_kw, time = 2)
-	k_xxs <- kernel_mat(dat[,2:5], xhat, time = 2, kw = dat_kw)
-	k_xsx <- kernel_mat(xhat, dat[,2:5], time = 2, kw = dat_kw)
-	k_xsxs <- kernel_mat(xhat, xhat, time = 2, kw = dat_kw)
+	cols <- c(2:5)[dat_kw != 0]
+	dat_kw <- dat_kw[dat_kw != 0]
+	k_xx <- kernel_mat(dat[,cols], dat[,cols], kw = dat_kw, time = 2)
+	k_xxs <- kernel_mat(dat[,cols], xhat[,cols-1], time = 2, kw = dat_kw)
+	k_xsx <- kernel_mat(xhat[,cols-1], dat[,cols], time = 2, kw = dat_kw)
+	k_xsxs <- kernel_mat(xhat[,cols-1], xhat[,cols-1], time = 2, kw = dat_kw)
 	ign_idx <- round(apply(k_xsx, 2, sum), 20) == 0
-#	fhat_mean <- k_xsx[1,!ign_idx] %*% solve(k_xx[!ign_idx,!ign_idx] + 
-#		0.01 * diag(sum(!ign_idx))) %*% log(1 + dat[!ign_idx,1])
-#	cov_fhat <- k_xsxs[1,1] - k_xsx[1,!ign_idx] %*% 
-#		solve(k_xx[!ign_idx,!ign_idx] + 10 * diag(sum(!ign_idx))) %*% 
-#		k_xxs[!ign_idx,1]
-#	out <- c(lwr = exp(fhat_mean - 2 * cov_fhat) - 1, 
-#		mu = exp(fhat_mean) - 1, 
-#		upr = exp(fhat_mean + 2 * cov_fhat) - 1)
+	cov_fhat <- k_xsxs[1,1] - k_xsx[1,!ign_idx] %*% 
+		solve(k_xx[!ign_idx,!ign_idx] + 10 * diag(sum(!ign_idx))) %*% 
+		k_xxs[!ign_idx,1]
 	fhat_mean <- k_xsx[1,!ign_idx] %*% solve(k_xx[!ign_idx,!ign_idx] + 
-		0.01 * diag(sum(!ign_idx))) %*% dat[!ign_idx,1]
+		0.01 * diag(sum(!ign_idx))) %*% dat[!ign_idx,1] # 0.01
 	out <- c(lwr = fhat_mean - 2 * cov_fhat, 
 		mu = fhat_mean, 
 		upr = fhat_mean + 2 * cov_fhat)
