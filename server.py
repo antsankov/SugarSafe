@@ -14,10 +14,6 @@ def analyze_page():
     analyze.input_health(f.read())
     return "test"
 
-@app.route("/test")
-def test_page():
-    return render_template('confidence.html')
-
 @app.route('/patient/<number>')
 def get_patient_data(number):
     return str(number)

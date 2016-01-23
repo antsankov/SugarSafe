@@ -13,7 +13,7 @@
   <!--Favicon -->
   <link rel="icon" type="image/png" href="static/img/favicon.png">
 
-  <title>SugarSafe&trade;. Predict Your Health.</title>
+  <title>SugarSafe. Predict Your Health.</title>
 
   <!-- Bootstrap core CSS -->
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -128,7 +128,6 @@
   </div>
   <!-- Use it -->
   <div id ="app" class="content-section-a">
-
     <div class="container">
       <div class="row">
         <div class="col-sm-6 pull-right wow fadeInRightBig">
@@ -137,8 +136,6 @@
           <h3 class="section-heading"><img class="img-responsive" class="bannerimage" src="static/img/apptitle.png" alt=""></h3>
         </div>
       </div>
-
-      <div class="sub-title lead3">Select a patient: </div><br>
       <div id="patient-select" class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="PatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Patient
@@ -152,6 +149,9 @@
       </div>
 
       <div class="row">
+        <div style="text-align: center" id="patientName">
+          <h3> Hey </h3>
+        </div>
         <div class="widget col-sm-12 col-md-8 wow" data-animation-delay="200">
           <div id="viz"></div>
         </div>
@@ -285,30 +285,20 @@
     jQuery(function($) {
       $(document).ready( function() {
         $('.navbar-default').stickUp();
-
+        $(".dropdown-menu li a")[0].click();
       });
     });
 
     $('#patient5').click(function(e) {
-      $.ajax({url: '/patient/5', success: function(result){
-        $( "#raw_value" ).html('<h1>' + result + '</h1>')
-        makeGraph('data2')
-      }});
-      e.preventDefault();// prevent the default anchor functionality
+      prepareGraphs(5,'data')
     });
 
     $('#patient6').click(function(e) {
-      $.ajax({url: '/patient/6', success: function(result){
-        $( "#raw_value" ).html('<h1>' + result + '</h1>')
-        makeGraph('data')
-      }});
+      prepareGraphs(6,'data')
     });
 
     $('#patient9').click(function(e) {
-      $.ajax({url: '/patient/9', success: function(result){
-        $( "#raw_value" ).html('<h1>' + result + '</h1>')
-        makeGraph('data2')
-      }});
+      prepareGraphs(9,'data')
     });
     </script>
 
