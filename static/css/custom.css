@@ -496,3 +496,7 @@ video {
 video.fillWidth {
 	width: 100%;
 }
+
+#patientName > h3 {
+    margin-top: 5px;
+}
