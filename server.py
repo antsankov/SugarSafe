@@ -14,5 +14,9 @@ def analyze_page():
     analyze.input_health(f.read())
     return "test"
 
+@app.route('/patient/<number>')
+def get_patient_data(number):
+    return str(number)
+
 if __name__ == "__main__":
     app.run(debug=True)
