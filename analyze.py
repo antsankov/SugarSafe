@@ -1,5 +1,5 @@
 import json
-from dateutil import *
+import dateutil.parser
 
 def input_health(health_json):
     health_dict = json.loads(health_json)
@@ -8,4 +8,5 @@ def input_health(health_json):
         fix_date(date)
 
 def fix_date(date):
-    print(dateutil.parser.parse(date))
+    parsed = dateutil.parser.parse(date)
+    print parsed.hour + parsed.minute/60.0 + parsed.second/3600.0
