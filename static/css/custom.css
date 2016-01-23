@@ -465,6 +465,11 @@ NO MORE TABLES!! ;)
 	width: 100%;
 }
 
+.patient-id {
+	text-align: center;
+	margin-top:10;
+}
+
 /* Video */
 .header-unit {
   height: 460px;

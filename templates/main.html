@@ -136,22 +136,29 @@
           <h3 class="section-heading"><img class="img-responsive" class="bannerimage" src="static/img/apptitle.png" alt=""></h3>
         </div>
       </div>
-      <div id="patient-select" class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="PatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Patient
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a id="patient5">Patient 5</a></li>
-          <li><a id="patient6">Patient 6</a></li>
-          <li><a id="patient9">Patient 9</a></li>
-        </ul>
-      </div>
-
       <div class="row">
-        <div style="text-align: center" id="patientName">
+        <div class="col-sm-3">
+        <div id="patient-select" class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="PatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a id="patient5">Patient 5</a></li>
+            <li><a id="patient6">Patient 6</a></li>
+            <li><a id="patient9">Patient 9</a></li>
+          </ul>
+        </div>
+      </div>
+        <div class="col-sm-3" >
+        <div style="patient-id" id="patientName">
           <h3> Hey </h3>
         </div>
+      </div>
+    </div>
+
+      <div class="row">
+
         <div class="widget col-sm-12 col-md-8 wow" data-animation-delay="200">
           <div id="viz"></div>
         </div>
@@ -294,7 +301,7 @@
     });
 
     $('#patient6').click(function(e) {
-      prepareGraphs(6,'data')
+      prepareGraphs(6,'data2')
     });
 
     $('#patient9').click(function(e) {
