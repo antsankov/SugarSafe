@@ -470,6 +470,10 @@ NO MORE TABLES!! ;)
 	margin-top:10;
 }
 
+#patientName > h3 {
+    margin-top: 5px;
+}
+
 /* Video */
 .header-unit {
   height: 460px;
@@ -495,8 +499,4 @@ video {
 }
 video.fillWidth {
 	width: 100%;
-}
-
-#patientName > h3 {
-    margin-top: 5px;
 }
