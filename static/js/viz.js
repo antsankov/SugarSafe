@@ -32,8 +32,8 @@ var coalitionLeft = ["A", "B", "F", "Ø"],
     displaySingleCoalition = true;
     // false, "left", "right"
 
-var useCoalitionLabels = true,
-    yAxisTitle = "Votes (%)",
+var useCoalitionLabels = false,
+    yAxisTitle = "mg/dL",
     cutoff = 50;
 
 if (useCoalitionLabels === true) { margin.right = 50; }
@@ -53,8 +53,8 @@ var xAxis = d3.svg.axis()
 
 var yAxis = d3.svg.axis()
     .scale(y)
-    .orient("left")
-    .tickFormat(d3.format(".0%"));
+    .orient("left");
+    // .tickFormat(d3.format(".0%"));
 
 var lineLeft = d3.svg.area()
     .interpolate(interpolation)
