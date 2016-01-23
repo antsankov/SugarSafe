@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/classes-234da33ba7775d42907b74adb29f51375cc06c7b.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/classes-d33ecf6956e520962f5f63ff6ec1ab58ddb5d2e9.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.google.android.support/wearable/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="58b928ccbaf9090c632f278d6bd31e1ae42f2457">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/classes-0807e2c320f6e1c68d80f0f7b10f6d79823c53e6.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.android.support/support-v13/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f4d7a07120e76988f3a15403838d323c2400db83">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-43806260f75d350e2aa03c0fce08e68c196ba25d.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.android.support/support-v13/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5ddf5f4817565c9db82613c16093f76640a54e15">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/classes-d4e1db7e582522ce4721176bc9893729a062d15b.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-64ec3f75dff3a9ba203233f8794ac274552ea95a.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/classes-29d8af18f96f9d9a4803ac414840535fb3c31d91.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/classes-6a5b9823ae31585685fa8b3bc9264f07978bcd99.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-1ded2865fd86b654fc61856997a4bba51d8be225.jar" />
+    </item>
+    <item
+        jar="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c6d79137693d494dee16372d3921f919eb724ced">
+        <dex dex="/Users/trivedigaurav/AndroidStudioProjects/SugarSafe/Wearable/build/intermediates/pre-dexed/debug/classes-94055b0d00bb3d4dcf6539618d2d632e135da999.jar" />
+    </item>
+
+</items>
