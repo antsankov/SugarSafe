@@ -421,7 +421,48 @@ NO MORE TABLES!! ;)
 	}
 }
 
+/* Viz stuff */
+.widget {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-top: 80px;
+    margin-left: 25px;
+    height: 300px;
+}
 
+#glucose {
+	z-index: 999;
+    background-color: #ea0d6d !important;
+    color: #ffffff;
+}
+
+#glucose-value{
+	width: 50%;
+    /* Set the margin-left and margin-right automatically set */
+    margin: 75px auto; 
+}
+
+#patient-select {
+	margin-left: 10px;
+	z-index: 1000;
+}
+
+#patient-select .open > .dropdown-menu {
+    margin-top: 0 !important;
+    opacity: 1;
+    visibility: visible;
+}
+
+#PatientSelect {
+	background-color: #2B83BA;
+}
+
+#viz {
+	height: 100%;
+	width: 100%;
+}
 
 
 

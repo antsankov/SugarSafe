@@ -3,15 +3,15 @@ function se95(p, n) {
 };
 
 // Settings
-var width = 440,
-    height = 400,
+var width = parseInt(d3.select('#viz').style('width'), 10) - 75,
+    height = parseInt(d3.select('#viz').style('height'), 10) - 45,
     padding = 30;
 
 var margin = {
-    'top': 30,
+    'top': 10,
     'right': 35,
-    'bottom': 30,
-    'left': 30
+    'bottom': 25,
+    'left': 40
 };
 
 margin.hor = margin.left + margin.right;
@@ -26,10 +26,10 @@ var dataset = "static/data.csv",
     interpolation = "linear";
 
 var coalitionLeft = ["A", "B", "F", "Ø"],
-    coalitionLeftColor = "#D7191C", // blue
+    coalitionLeftColor = "#D7191C", // red
     coalitionRight = ["V", "O", "K", "I", "C"],
-    coalitionRightColor = "#2B83BA", // red
-    displaySingleCoalition = false;
+    coalitionRightColor = "#2B83BA", // blue
+    displaySingleCoalition = true;
     // false, "left", "right"
 
 var useCoalitionLabels = true,
@@ -82,7 +82,7 @@ var confidenceAreaRight = d3.svg.area()
     .y1(function(d) {
         return y(d["right"] + d["confidenceRight"]); });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#viz").append("svg")
     .attr({
         "width": width + margin.left + margin.right,
         "height": height + margin.top + margin.bottom

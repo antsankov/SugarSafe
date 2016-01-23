@@ -96,30 +96,30 @@
       <div class="row">
         <div class="col-sm-3 wow fadeInDown text-center">
           <img class="rotate" width=50% href="#electronics" src="static/img/icon/search.svg" alt="Generic placeholder image">
-          <h3>Electronics</h3>
-          <p class="sub-title lead3">Learn concepts of electrical engineering along with technical skills like breadboarding, arduino microcontrollers, and soldering.</p>
+          <h3>Predict</h3>
+          <p class="sub-title lead3">Sugar safe helps you manage diabetes better by predicting your glucose levels in the next one hour.</p>
 
           <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
         </div><!-- /.col-lg-4 -->
 
         <div class="col-sm-3 wow fadeInDown text-center">
           <img  class="rotate" width=50% href="#prototype" src="static/img/icon/browser.svg" alt="Generic placeholder image">
-          <h3>Prototyping</h3>
-          <p class="sub-title lead3">Learn concepts of prototyping along with technical skills like ideation, physical prototyping, solidworks, and 3D printing.</p>
+          <h3>Personalized</h3>
+          <p class="sub-title lead3">Makes use of your glucose, food, and excercise logs from the OneTouch API to build a personalized model.</p>
           <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
         </div><!-- /.col-lg-4 -->
 
         <div class="col-sm-3 wow fadeInDown text-center">
           <img  class="rotate" width=50% href="#design" src="static/img/icon/laptop.svg" alt="Generic placeholder image">
-          <h3>Design</h3>
-          <p class="sub-title lead3">Learn concepts of design along with technical skills like graphic design, web design, user interface design, and user experience design.</p>
+          <h3>Stay Informed</h3>
+          <p class="sub-title lead3">Keeps you informed about the prediction confidence. We tell you when we are not sure.</p>
           <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
         </div><!-- /.col-lg-4 -->
 
         <div class="col-sm-3 wow fadeInDown text-center">
           <img  class="rotate" width=50% href="#iot" src="static/img/icon/watch.svg" alt="Generic placeholder image">
-          <h3>IOT</h3>
-          <p class="sub-title lead3">Learn the novel concept of Internet of Things along with a variety of technologies that make it possible like the Intel Edison.</p>
+          <h3>Smart Apps</h3>
+          <p class="sub-title lead3">Get predictions on the devices you use to plan the day ahead and stay sugar safe.</p>
           <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
         </div><!-- /.col-lg-4 -->
 
@@ -135,32 +135,38 @@
         </div>
         <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
           <h3 class="section-heading"><img class="img-responsive" class="bannerimage" src="static/img/apptitle.png" alt=""></h3>
-          <div class="sub-title lead3">Select a patient and we'll predict shit!</div><br>
-          <!-- /.panel-heading -->
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="PatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Patient
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a id=patient5>Patient 5</a></li>
-              <li><a id=patient6>Patient 6</a></li>
-              <li><a id=patient9>Patient 9</a></li>
-            </ul>
-          </div>
-          <!-- /.panel-body -->
-          <!-- /.panel -->
         </div>
-
-        <div id=viz class="col-lg-6 wow fadeInRightBig d3Frame"  data-animation-delay="200">
-        </div>
-        <script type="text/javascript"charset="utf-8"src="static/js/viz.js"></script>
-
       </div>
-    </div>
-    <!-- /.container -->
-  </div>
 
+      <div class="sub-title lead3">Select a patient and we'll predict shit!</div><br>
+      <div id="patient-select" class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="PatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Patient
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a id="patient5" href="#">Patient 5</a></li>
+          <li><a id="patient6" href="#">Patient 6</a></li>
+          <li><a id="patient9" href="#">Patient 9</a></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div id="glucose" class="widget col-sm-12 col-md-3 wow" data-animation-delay="100">
+          <div class="glocose-title">
+            <h5>Predicted glucose level</h5>
+          </div>
+          <div id="glucose-value">
+            <h1>104</h1>
+          </div>
+        </div>
+        <div class="widget col-sm-12 col-md-8 wow" data-animation-delay="200">
+          <div id="viz"></div>
+        </div>
+      </div>
+    <!-- /.container -->
+    </div>
+  </div>
 
 
   <!-- Credits -->
@@ -179,8 +185,8 @@
               <img  href="#prototype" src="static/img/dan.png" style="margin-left: -15px;" alt="Generic placeholder image">
             </div>
             <div class="col-md-8 box-ct">
-              <h3 style="color:#fff"> Dan </h3>
-              <p style="color:#fff; margin-top:0"> Assistant Professor, Department of Civil and Environmental Engineering. <a href="mailto:dps22@pitt.edu" style="color:#ea0d6d">Get in touch!</a> </p>
+              <h3 style="color:#fff"> Dan Rieman</h3>
+              <p style="color:#fff; margin-top:0"> Machine learning student. Data scientist.<br> <b>@danielrieman</b> </p>
             </div>
           </div>
         </div>
@@ -190,8 +196,8 @@
               <img  href="#prototype" src="static/img/gaurav.png" style="margin-left: -15px;" alt="Generic placeholder image">
             </div>
             <div class="col-md-8 box-ct">
-              <h3 style="color:#fff"> Gaurav </h3>
-              <p style="color:#fff; margin-top:0"> A center of excellence in sustainable engineering focusing on the design of sustainable solutions. <a href="http://www.engineeringx.pitt.edu/MCSI/" style="color:#ea0d6d">More Info.</a></p>
+              <h3 style="color:#fff"> Gaurav Trivedi</h3>
+              <p style="color:#fff; margin-top:0"> Bbiomedical informatics and intelligent systems student. Full stack developer. <br> <b>@trivedigaurav</b></p>
             </div>
           </div>
         </div>
@@ -204,8 +210,8 @@
               <img  href="#prototype" src="static/img/alex.png" style="margin-left: -15px;" alt="Generic placeholder image">
             </div>
             <div class="col-md-8 box-ct">
-              <h3 style="color:#fff"> Alex </h3>
-              <p style="color:#fff; margin-top:0"> Constellation is a leading supplier of power, natural gas, and renewable energy products across the US. <a href="http://www.constellation.com/pages/default.aspx" style="color:#ea0d6d">More Info.</a> </p>
+              <h3 style="color:#fff"> Alex Tsankov</h3>
+              <p style="color:#fff; margin-top:0"> Computer engineering student. Full stack developer. <br> <b>@antsankov</b> </p>
             </div>
           </div>
         </div>
@@ -215,8 +221,8 @@
               <img  href="#prototype" src="static/img/madhur.png" style="margin-left: -15px;" alt="Generic placeholder image">
             </div>
             <div class="col-md-8 box-ct">
-              <h3 style="color:#fff"> Madhur </h3>
-              <p style="color:#fff; margin-top:0"> A center of excellence in sustainable engineering focusing on the design of sustainable solutions. <a href="http://www.engineeringx.pitt.edu/MCSI/" style="color:#ea0d6d">More Info.</a></p>
+              <h3 style="color:#fff"> Madhur Malhotra</h3>
+              <p style="color:#fff; margin-top:0"> Computer engineering student. Designer. <br> <b>@madhurmalhotra</b></p>
             </div>
           </div>
         </div>
@@ -289,14 +295,15 @@
 
     <!-- Smoothscroll -->
     <script type="text/javascript" src="static/js/jquery.corner.js"></script>
-    <script src="static/js/wow.min.js"></script>
+    <script type="text/javascript" src="static/js/wow.min.js"></script>
+    <script type="text/javascript" src="static/js/classie.js"></script>
+    <script type="text/javascript" src="static/js/uiMorphingButton_inflow.js"></script>
+    <script type="text/javascript" src="static/js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="static/js/viz.js"></script>
+
     <script>
-    new WOW().init();
+      new WOW().init();
     </script>
-    <script src="static/js/classie.js"></script>
-    <script src="static/js/uiMorphingButton_inflow.js"></script>
-    <!-- Magnific Popup core JS file -->
-    <script src="static/js/jquery.magnific-popup.js"></script>
   </body>
 
-  </html>
+</html>
