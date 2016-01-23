@@ -4,6 +4,5 @@ Jinja2==2.8
 MarkupSafe==0.23
 Werkzeug==0.11.3
 wheel==0.26.0
-numpy==1.10.4
-scikit-learn==0.17
-sklearn==0.0
+python-dateutil==1.5
+rpy2==2.7.7
