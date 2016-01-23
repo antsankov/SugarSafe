@@ -29,14 +29,18 @@
 	 <!-- Owl-Carousel -->
     <link href="static/css/custom.css" rel="stylesheet">
 	<link href="static/css/owl.carousel.css" rel="stylesheet">
-    <link href="static/css/owl.theme.css" rel="stylesheet">
+    link href="static/css/owl.theme.css" rel="stylesheet">
 	<link href="static/css/style.css" rel="stylesheet">
 	<link href="static/css/animate.css" rel="stylesheet">
+  <link href="static/css/confidence.css" rel="stylesheet">
+
 
 	<!-- Magnific Popup core CSS file -->
 	<link rel="stylesheet" href="static/css/magnific-popup.css">
 
 	<script src="static/js/modernizr-2.6.2.min.js"></script>  <!-- Modernizr /-->
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
 </head>
 
 <body id="home">
@@ -142,18 +146,17 @@
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a id=patient5>Patient 5</a></li>
-                        <li><a id=paitent6>Patient 6</a></li>
-                        <li><a id=paitent9>Patient 9</a></li>
+                        <li><a id=patient6>Patient 6</a></li>
+                        <li><a id=patient9>Patient 9</a></li>
                       </ul>
                     </div>
                     <!-- /.panel-body -->
                 <!-- /.panel -->
             </div>
 
-            <div class="col-lg-6 wow fadeInRightBig d3Frame"  data-animation-delay="200">
-              <p> This is where D3 GOES! </p>
+            <div id=viz class="col-lg-6 wow fadeInRightBig d3Frame"  data-animation-delay="200">
             </div>
-
+            <script type="text/javascript"charset="utf-8"src="static/js/viz.js"></script>
 
           </div>
         </div>
@@ -300,15 +303,17 @@
 		});
 	  });
 
+    $('#patient6').click(function(e) {
+        alert('alerted');
+        e.preventDefault();// prevent the default anchor functionality
+    });
+
     $('#patient5').click(function(e) {
         alert('alerted');
         e.preventDefault();// prevent the default anchor functionality
     });
 
-    $('#patient6').click(function(e) {
-        alert('alerted');
-        e.preventDefault();// prevent the default anchor functionality
-    });
+
 
     $('#patient9').click(function(e) {
         alert('alerted');
