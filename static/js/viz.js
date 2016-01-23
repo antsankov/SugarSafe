@@ -75,13 +75,13 @@ function makeGraph(data){
       .y1(function(d) {
           return y(d["left"] + d["confidenceRight"]); });
 
-  var confidenceAreaRight = d3.svg.area()
-      .interpolate(interpolation)
-      .x(function(d) { return x(d["date"]); })
-      .y0(function(d) {
-          return y(d["right"] - d["confidenceRight"]); })
-      .y1(function(d) {
-          return y(d["right"] + d["confidenceRight"]); });
+  // var confidenceAreaRight = d3.svg.area()
+  //     .interpolate(interpolation)
+  //     .x(function(d) { return x(d["date"]); })
+  //     .y0(function(d) {
+  //         return y(d["right"] - d["confidenceRight"]); })
+  //     .y1(function(d) {
+  //         return y(d["right"] + d["confidenceRight"]); });
 
   var svg = d3.select("#viz").append("svg")
       .attr({
@@ -163,14 +163,14 @@ function makeGraph(data){
                   "d": confidenceAreaLeft
               });
       }
-      if (displaySingleCoalition !== "left") {
-          svg.append("path")
-              .attr({
-                  "class": "area confidence",
-                  "fill": coalitionRightColor,
-                  "d": confidenceAreaRight
-              });
-      }
+      // if (displaySingleCoalition !== "left") {
+      //     svg.append("path")
+      //         .attr({
+      //             "class": "area confidence",
+      //             "fill": coalitionRightColor,
+      //             "d": confidenceAreaRight
+      //         });
+      // }
 
       // Lines
       if (displaySingleCoalition !== "right") {
