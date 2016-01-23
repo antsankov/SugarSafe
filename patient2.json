@@ -1,0 +1,234 @@
+{
+  "bloodGlucose": [
+    {
+      "mealTag": "MEAL_TAG_PRE_MEAL",
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 153,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DDD0D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218209,
+      "createdDate": 1453502218209,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-17T09:12:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": null,
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 164,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DDC0D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218208,
+      "createdDate": 1453502218208,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-17T10:47:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": "MEAL_TAG_POST_MEAL",
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 251,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DDB0D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218207,
+      "createdDate": 1453502218207,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-17T14:48:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": null,
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 85,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DDA0D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218206,
+      "createdDate": 1453502218206,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-17T21:00:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": null,
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 131,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DD90D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218205,
+      "createdDate": 1453502218205,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-18T10:40:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": "MEAL_TAG_POST_MEAL",
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 198,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DD80D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218204,
+      "createdDate": 1453502218204,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-18T11:59:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": "MEAL_TAG_POST_MEAL",
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 290,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DD70D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218203,
+      "createdDate": 1453502218203,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-18T14:58:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": "MEAL_TAG_PRE_MEAL",
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 74,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DD60D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218202,
+      "createdDate": 1453502218202,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-18T17:18:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": null,
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 94,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DD50D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218201,
+      "createdDate": 1453502218201,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-18T17:53:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    },
+    {
+      "mealTag": "MEAL_TAG_POST_MEAL",
+      "cgmCalibration": false,
+      "bgValue": {
+        "value": 175,
+        "units": "mg/dL"
+      },
+      "aboveLinearRange": false,
+      "belowLinearRange": false,
+      "id": "29F4CACA1DD40D96E053E7D56A40883E",
+      "lastUpdatedDate": 1453502218200,
+      "createdDate": 1453502218200,
+      "publishedDate": 1453502218232,
+      "readingDate": "2015-10-18T21:04:00",
+      "deviceType": "METERTYPES_ONETOUCHVERIOIQ",
+      "deviceSerialNumber": "T1BKT050",
+      "edited": false,
+      "editable": false,
+      "manual": false,
+      "annotation": []
+    }
+  ],
+  "food": [],
+  "exercise": [],
+  "bolusInsulin": [],
+  "meta": {
+    "limit": 10,
+    "startDate": "2011-01-22T17:31:10",
+    "totalCount": 428,
+    "exerciseIncluded": 0,
+    "totalIncludedCount": 10,
+    "endDate": "2016-01-22T17:31:10",
+    "foodCount": 0,
+    "exerciseCount": 0,
+    "bolusInsulinIncluded": 0,
+    "offset": 0,
+    "foodIncluded": 0,
+    "bloodGlucoseIncluded": 10,
+    "bolusInsulinCount": 0,
+    "bloodGlucoseCount": 428
+  }
+}
+Response Code
