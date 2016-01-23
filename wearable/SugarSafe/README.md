@@ -2,7 +2,7 @@
 Sugar Safe Wearable
 ===================================
 
-Mostly resuses code from Android JumpingJack Sample ://github.com/googlesamples/android-JumpingJack
+Mostly resuses code from Android JumpingJack Sample - http://github.com/googlesamples/android-JumpingJack
 
 License
 -------
