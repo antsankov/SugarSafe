@@ -3,9 +3,9 @@ function se95(p, n) {
 };
 
 function prepareGraphs(patientId, data) {
-  $.ajax({url: '/patient/' + patientId.toString(), success: function(result){
-    $( "#raw_value" ).html('<h1>' + result + '</h1>')
-    $( "#patientName" ).html('<h3> Patient: ' + result + '</h3>')
+  $.ajax({url: '/analyze/' + patientId.toString(), success: function(result){
+    $( "#raw_value" ).html('<h1>' + Math.round(result.mean) + '</h1>')
+    $( "#patientName" ).html('<h3> Patient: ' + patientId + '</h3>')
     makeGraph(data)
   }});
 

@@ -8,10 +8,10 @@ app = Flask(__name__)
 def main_page():
     return render_template('main.html')
 
-@app.route('/analyze')
-def analyze_page():
-    analyze.input_health("5")
-    return "test"
+@app.route('/analyze/<number>')
+def analyze_patient(number):
+    result = analyze.input_health(number)
+    return result
 
 @app.route('/patient/<number>')
 def get_patient_data(number):

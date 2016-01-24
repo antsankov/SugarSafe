@@ -1,21 +1,18 @@
 import json
+from flask import jsonify
 import dateutil.parser
 import os
 from rpy2.robjects.packages import SignatureTranslatedAnonymousPackage
 
 rstring = """
-set_directory <- function(dir) {
-    setwd(dir)
-}
-
-patient_mat <- function(patient_num) {
+patient_mat <- function(dir, patient_num) {
     # load required package -- ulimately needs fromJSON in the 
     # rjson package, but this wasn't working
     require(rjson)
     require(jsonlite)
     
     # file name of patient_num
-    file_name <- paste0('patient', patient_num, '.json')
+    file_name <- paste0(dir, '/patient', patient_num, '.json')
     
     # load data as a list of data frames
     dat <- fromJSON(file_name)
@@ -54,14 +51,6 @@ patient_mat <- function(patient_num) {
     out[,3] <- bg2$time  # do some sort of transformation
     out[,4] <- bg2$post_meal
     out[,5] <- bg2$pre_meal
-    for(i in 1:nrow(out)) {
-        temp_in <- insulin2[bg2$date_time[i] - insulin2$date_time <= lag & 
-            bg2$date_time[i] - insulin2$date_time >= 0,]
-        out[i,6] <- ifelse(nrow(temp_in) > 0, sum(temp_in$delivered), 0)
-        temp_fo <- food2[bg2$date_time[i] - food2$date_time <= lag & 
-            bg2$date_time[i] - food2$date_time >= 0,]
-        out[i,7] <- ifelse(nrow(temp_fo) > 0, sum(temp_fo$carbs), 0)
-    }
     
     # return the matrix
     return(out)
@@ -98,10 +87,10 @@ kernel_mat <- function(X1, X2, kw = NULL, time = NULL) {
     return(out)
 }
 
-make_next_prediction <- function(patient_number, is_post_meal = 0,
+make_next_prediction <- function(dir, patient_number, is_post_meal = 0,
     is_pre_meal = 0) {
     require(Matrix)
-    dat <- patient_mat(patient_number)
+    dat <- patient_mat(dir, patient_number)
     xhat <- as.matrix(
         data.frame(
             date_time = max(dat[,2]) + c(3600, 2 * 3600),
@@ -128,15 +117,14 @@ make_next_prediction <- function(patient_number, is_post_meal = 0,
 }
     """
 
-def input_health(health_json):
-    cwd = os.getcwd() + "/data/"
-    print cwd
-
+def input_health(patient):
+    cwd = os.getcwd() + "/data"
+    
     ml = SignatureTranslatedAnonymousPackage(rstring, "ml")
-    ml.set_directory(cwd)
-
-    # print ml.make_next_prediction(5,0,0)
-    print ml.patient_mat(5)
+    
+    pred = ml.make_next_prediction(cwd,patient,0,0)
+    return jsonify({"lwr": pred[0], "mean": pred[1], "upr": pred[2]})
+    # print ml.patient_mat(patient)
 
      # os.path.dirname(os.getcwd())
 
