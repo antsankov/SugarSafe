@@ -2,6 +2,17 @@ function se95(p, n) {
     return Math.sqrt(p*(1-p)/n)*1.96;
 };
 
+function prepareGraphs(patientId, data) {
+  $.ajax({url: '/analyze/' + patientId.toString(), beforeSend:  function(){ $('#status').delay(300).fadeIn(); 
+  $('#preloader').delay(300).fadeIn('slow')}, complete: function() {$('#status').delay(300).fadeOut(); 
+  $('#preloader').delay(300).fadeOut('slow')},
+  success: function(result){
+    $( "#raw_value" ).html('<h1>' + Math.round(result.mean) + '</h1>')
+    $( "#patientName" ).html('<h3> Patient: ' + patientId + '</h3>')
+    makeGraph(data)
+  }});
+
+}
 function makeGraph(data){
 
   d3.select("svg").remove();
@@ -199,6 +210,7 @@ function makeGraph(data){
           var dotsLeft = dots.append("circle")
               .attr({
                   "class": "dot",
+                  "fill" : "white",
                   "r": 3,
                   "cx": lineLeft.x(),
                   "cy": lineLeft.y(),
@@ -209,6 +221,7 @@ function makeGraph(data){
           var dotsRight = dots.append("circle")
               .attr({
                   "class": "dot",
+                  "fill" : coalitionRightColor,
                   "r": 3,
                   "cx": lineRight.x(),
                   "cy": lineRight.y(),

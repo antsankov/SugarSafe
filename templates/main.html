@@ -13,7 +13,7 @@
   <!--Favicon -->
   <link rel="icon" type="image/png" href="static/img/favicon.png">
 
-  <title>SugarSafe&trade;. Predict Your Health.</title>
+  <title>SugarSafe. Predict Your Health.</title>
 
   <!-- Bootstrap core CSS -->
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="static/css/magnific-popup.css">
 
   <script src="static/js/modernizr-2.6.2.min.js"></script>  <!-- Modernizr /-->
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.13/d3.min.js"></script>
 </head>
 
 <body id="home">
@@ -128,7 +128,6 @@
   </div>
   <!-- Use it -->
   <div id ="app" class="content-section-a">
-
     <div class="container">
       <div class="row">
         <div class="col-sm-6 pull-right wow fadeInRightBig">
@@ -138,20 +137,36 @@
         </div>
       </div>
 
-      <div class="sub-title lead3">Select a patient: </div><br>
-      <div id="patient-select" class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="PatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Patient
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a id="patient5"><i class="fa fa-user"></i>  &nbsp;Patient 5</a></li>
-          <li><a id="patient6"><i class="fa fa-user"></i>  &nbsp;Patient 6</a></li>
-          <li><a id="patient9"><i class="fa fa-user"></i>  &nbsp;Patient 9</a></li>
-        </ul>
+      <div class="row">
+        <div class="col-sm-3">
+        <div id="patient-select" class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="PatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select Patient
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <!-- <li><a id="pat-1"><i class="fa fa-user"></i>  &nbsp; Patient 1</a></li> -->
+            <li><a id="pat-2"><i class="fa fa-user"></i>  &nbsp;Patient 2</a></li>
+            <li><a id="pat-3"><i class="fa fa-user"></i>  &nbsp; Patient 3</a></li>
+            <li><a id="pat-4"><i class="fa fa-user"></i>  &nbsp; Patient 4</a></li>
+            <li><a id="pat-5"><i class="fa fa-user"></i>  &nbsp; Patient 5</a></li>
+            <!-- <li><a id="pat-6"><i class="fa fa-user"></i>  &nbsp; Patient 6</a></li> -->
+            <li><a id="pat-7"><i class="fa fa-user"></i>  &nbsp; Patient 7</a></li>
+            <li><a id="pat-8"><i class="fa fa-user"></i>  &nbsp; Patient 8</a></li>
+            <li><a id="pat-9"><i class="fa fa-user"></i>  &nbsp; Patient 9</a></li>
+          </ul>
+        </div>
+
       </div>
+        <div class="col-sm-3" >
+        <div style="patient-id" id="patientName">
+          <h3></h3>
+        </div>
+      </div>
+    </div>
 
       <div class="row">
+
         <div class="widget col-sm-12 col-md-8 wow" data-animation-delay="200">
           <div id="viz"></div>
         </div>
@@ -285,31 +300,46 @@
     jQuery(function($) {
       $(document).ready( function() {
         $('.navbar-default').stickUp();
-
+        $(".dropdown-menu li a")[0].click();
       });
     });
 
-    $('#patient5').click(function(e) {
-      $.ajax({url: '/patient/5', success: function(result){
-        $( "#raw_value" ).html('<h1>' + result + '</h1>')
-        makeGraph('data2')
-      }});
-      e.preventDefault();// prevent the default anchor functionality
+    $('#pat-1').click(function(e) {
+      prepareGraphs(1,'data')
     });
 
-    $('#patient6').click(function(e) {
-      $.ajax({url: '/patient/6', success: function(result){
-        $( "#raw_value" ).html('<h1>' + result + '</h1>')
-        makeGraph('data')
-      }});
+    $('#pat-2').click(function(e) {
+      prepareGraphs(2,'data2')
     });
 
-    $('#patient9').click(function(e) {
-      $.ajax({url: '/patient/9', success: function(result){
-        $( "#raw_value" ).html('<h1>' + result + '</h1>')
-        makeGraph('data2')
-      }});
+    $('#pat-3').click(function(e) {
+      prepareGraphs(3,'data')
     });
+
+    $('#pat-4').click(function(e) {
+      prepareGraphs(4,'data2')
+    });
+
+    $('#pat-5').click(function(e) {
+      prepareGraphs(5,'data')
+    });
+
+    $('#pat-6').click(function(e) {
+      prepareGraphs(6,'data2')
+    });
+
+    $('#pat-7').click(function(e) {
+      prepareGraphs(7,'data')
+    });
+
+    $('#pat-8').click(function(e) {
+      prepareGraphs(8,'data2')
+    });
+
+    $('#pat-9').click(function(e) {
+      prepareGraphs(9,'data')
+    });
+
     </script>
 
     <!-- Smoothscroll -->

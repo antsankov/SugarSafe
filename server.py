@@ -8,15 +8,10 @@ app = Flask(__name__)
 def main_page():
     return render_template('main.html')
 
-@app.route('/analyze')
-def analyze_page():
-    f = open('data/patient1.json','r')
-    analyze.input_health(f.read())
-    return "test"
-
-@app.route("/test")
-def test_page():
-    return render_template('confidence.html')
+@app.route('/analyze/<number>')
+def analyze_patient(number):
+    result = analyze.get_prediction(number)
+    return result
 
 @app.route('/patient/<number>')
 def get_patient_data(number):
