@@ -129,12 +129,14 @@ make_next_prediction <- function(patient_number, is_post_meal = 0,
     """
 
 def input_health(health_json):
-    cwd = os.getcwd() + "/data"
+    cwd = os.getcwd() + "/data/"
+    print cwd
 
     ml = SignatureTranslatedAnonymousPackage(rstring, "ml")
     ml.set_directory(cwd)
 
-    print ml.make_next_prediction(5,0,0)
+    # print ml.make_next_prediction(5,0,0)
+    print ml.patient_mat(5)
 
      # os.path.dirname(os.getcwd())
 

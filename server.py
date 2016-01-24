@@ -10,8 +10,7 @@ def main_page():
 
 @app.route('/analyze')
 def analyze_page():
-    f = open('data/patient1.json','r')
-    analyze.input_health(f.read())
+    analyze.input_health("5")
     return "test"
 
 @app.route('/patient/<number>')

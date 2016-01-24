@@ -474,6 +474,10 @@ NO MORE TABLES!! ;)
     margin-top: 5px;
 }
 
+.dropdown-menu li{
+	cursor: pointer;
+}
+
 /* Video */
 .header-unit {
   height: 460px;
