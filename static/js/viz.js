@@ -43,7 +43,8 @@ function makeGraph(data){
 
   var xAxis = d3.svg.axis()
       .scale(x)
-      .orient("bottom");
+      .orient("bottom")
+      .ticks(d3.time.day, 5);
 
   var yAxis = d3.svg.axis()
       .scale(y)
@@ -94,7 +95,6 @@ function makeGraph(data){
         .attr("transform", "rotate(-90)")
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("mg/dL");
 
     svg.append("path")
       .datum(data)

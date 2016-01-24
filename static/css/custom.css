@@ -441,7 +441,7 @@ NO MORE TABLES!! ;)
 
 .ActualLine {
   fill: none;
-  stroke: blue;
+  stroke: #3b3a3c;
   stroke-width: 3px;
 }
 
@@ -453,7 +453,7 @@ NO MORE TABLES!! ;)
 
 .PredictedLine {
   fill: none;
-  stroke: red;
+  stroke: #ea0d6d;
   stroke-width: 1.5px;
 }
 
