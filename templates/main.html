@@ -8,8 +8,8 @@
  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-  <meta name="description" content="The Series is a myriad of workshops for students to learn technical skills like electronics, prototyping, user interface design, internet of things, etc.">
-  <meta name="author" content="David Sanchez">
+  <meta name="description" content="SugarSafe uses state-of-the-art machine learning models to make predictions about your blood glucose levels based on your activity.">
+  <meta name="author" content="SugarSafe">
   <!--Favicon -->
   <link rel="icon" type="image/png" href="static/img/favicon.png">
 
@@ -90,14 +90,14 @@
 
       <div class="col-md-8 col-md-offset-2 text-center wrap_title">
         <h2>What is SugarSafe?</h2>
-        <h3 class="lead" style="color:#666; margin-top:0">SugarSafe makes predictions about your blood glucose levels. It uses state-of-the-art machine learning models under the hood based on your activity.</h3>
+        <h3 class="lead" style="color:#666; margin-top:0">SugarSafe&trade; uses state-of-the-art machine learning models to make predictions about your blood glucose levels based on your activity.</h3>
       </div>
 
       <div class="row">
         <div class="col-sm-3 wow fadeInDown text-center">
           <img class="rotate" width=50% href="#electronics" src="static/img/icon/search.svg" alt="Generic placeholder image">
           <h3>Predict</h3>
-          <p class="sub-title lead3">Helps you manage diabetes better by predicting your glucose levels in the next one hour.</p>
+          <p class="sub-title lead3">We help you better manage diabetes by predicting your glucose levels an hour in advance.</p>
 
           <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
         </div><!-- /.col-lg-4 -->
@@ -105,21 +105,21 @@
         <div class="col-sm-3 wow fadeInDown text-center">
           <img  class="rotate" width=50% href="#prototype" src="static/img/icon/browser.svg" alt="Generic placeholder image">
           <h3>Personalized</h3>
-          <p class="sub-title lead3">Makes use of your glucose, food, and exercise logs from the OneTouch API to build a personalized model.</p>
+          <p class="sub-title lead3">We use glucose, food, and exercise logs from the OneTouch API to build a personalized glucose monitor for you.</p>
           <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
         </div><!-- /.col-lg-4 -->
 
         <div class="col-sm-3 wow fadeInDown text-center">
           <img  class="rotate" width=50% href="#design" src="static/img/icon/laptop.svg" alt="Generic placeholder image">
           <h3>Stay Informed</h3>
-          <p class="sub-title lead3">Keeps you informed about the prediction confidence. We tell you when we are not sure.</p>
+          <p class="sub-title lead3">We keep you informed about the glucose level prediction confidence. We tell you when we are not sure.</p>
           <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
         </div><!-- /.col-lg-4 -->
 
         <div class="col-sm-3 wow fadeInDown text-center">
           <img  class="rotate" width=50% href="#iot" src="static/img/icon/watch.svg" alt="Generic placeholder image">
           <h3>Smart Apps</h3>
-          <p class="sub-title lead3">Get predictions on your devices to plan the day and stay sugar safe.</p>
+          <p class="sub-title lead3">Get glucose predictions on your wearable devices to plan the day and stay SugarSafe&trade;.</p>
           <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
         </div><!-- /.col-lg-4 -->
 
@@ -136,29 +136,31 @@
           <h3 class="section-heading"><img class="img-responsive" class="bannerimage" src="static/img/apptitle.png" alt=""></h3>
         </div>
       </div>
+
       <div class="row">
         <div class="col-sm-3">
         <div id="patient-select" class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" id="PatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Select
+            Select Patient
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <!-- <li><a id="pat-1">Patient 1</a></li> -->
-            <li><a id="pat-2">Patient 2</a></li>
-            <li><a id="pat-3">Patient 3</a></li>
-            <li><a id="pat-4">Patient 4</a></li>
-            <li><a id="pat-5">Patient 5</a></li>
-            <!-- <li><a id="pat-6">Patient 6</a></li> -->
-            <li><a id="pat-7">Patient 7</a></li>
-            <li><a id="pat-8">Patient 8</a></li>
-            <li><a id="pat-9">Patient 9</a></li>
+            <!-- <li><a id="pat-1"><i class="fa fa-user"></i>  &nbsp; Patient 1</a></li> -->
+            <li><a id="pat-2"><i class="fa fa-user"></i>  &nbsp;Patient 2</a></li>
+            <li><a id="pat-3"><i class="fa fa-user"></i>  &nbsp; Patient 3</a></li>
+            <li><a id="pat-4"><i class="fa fa-user"></i>  &nbsp; Patient 4</a></li>
+            <li><a id="pat-5"><i class="fa fa-user"></i>  &nbsp; Patient 5</a></li>
+            <!-- <li><a id="pat-6"><i class="fa fa-user"></i>  &nbsp; Patient 6</a></li> -->
+            <li><a id="pat-7"><i class="fa fa-user"></i>  &nbsp; Patient 7</a></li>
+            <li><a id="pat-8"><i class="fa fa-user"></i>  &nbsp; Patient 8</a></li>
+            <li><a id="pat-9"><i class="fa fa-user"></i>  &nbsp; Patient 9</a></li>
           </ul>
         </div>
+
       </div>
         <div class="col-sm-3" >
         <div style="patient-id" id="patientName">
-          <h3> Hey </h3>
+          <h3></h3>
         </div>
       </div>
     </div>
@@ -170,13 +172,13 @@
         </div>
         <div id="glucose" class="widget col-sm-12 col-md-3 wow" data-animation-delay="100">
           <div class="glocose-title">
-            <h5>Predicted glucose level (mg/dL)</h5>
+            <h5>Predicted Glucose Level (mg/dL):</h5>
           </div>
           <div id="glucose-value">
             <div id="raw_value">
               <h1 style="glucose-value"></h1>
             </div>
-            <h4 style="glucose-value">Next reading</h4>
+            <h4 style="glucose-value">SugarSafe&trade; Prediction</h4>
           </div>
         </div>
       </div>
@@ -203,7 +205,7 @@
 
         <div class="col-md-6 col-md-offset-3 text-center wrap_title">
           <h2 style="color:#fff">Team</h2>
-          <p class="lead" style="color:#fff; margin-top:0">Our squad is pretty lit!</p>
+          <p class="lead" style="color:#fff; margin-top:0">We have an awesome team of hackers!</p>
         </div>
 
         <div class="col-sm-6  block wow bounceIn">
@@ -213,7 +215,7 @@
             </div>
             <div class="col-md-8 box-ct">
               <h3 style="color:#fff"> Dan Rieman</h3>
-              <p style="color:#fff; margin-top:0"> Machine learning student. Data scientist.<br> <b>@danielrieman</b> </p>
+              <p style="color:#fff; margin-top:0"> Dan, a Penn student, loves Data Science and specializes in Machine Learning Algorithms. At Hackathons, Soylent is his go-to meal. <br> <a href="http://github.com/danrieman" style="color:#fff"><i class="fa fa-github-square"></i> /danrieman</a> </p>
             </div>
           </div>
         </div>
@@ -224,7 +226,7 @@
             </div>
             <div class="col-md-8 box-ct">
               <h3 style="color:#fff"> Gaurav Trivedi</h3>
-              <p style="color:#fff; margin-top:0"> Biomedical informatics and intelligent systems student. Full stack developer. <br> <b>@trivedigaurav</b></p>
+              <p style="color:#fff; margin-top:0"> Gaurav, a Pitt student, is a full-stack developer who specializes in Biomedical Informatics and Intelligent Systems. Smiling in photos is not his forte. <br><a href="http://github.com/trivedigaurav" style="color:#fff"><i class="fa fa-github-square"></i> /trivedigaurav</a> </p>
             </div>
           </div>
         </div>
@@ -238,7 +240,7 @@
             </div>
             <div class="col-md-8 box-ct">
               <h3 style="color:#fff"> Alex Tsankov</h3>
-              <p style="color:#fff; margin-top:0"> Computer engineering student. Full stack developer. <br> <b>@antsankov</b> </p>
+              <p style="color:#fff; margin-top:0"> Alex is a full-stack developer who studies Computer Engineering at CU-Boulder. Sucks at coming up with interesting facts about himself. <br><a href="http://github.com/antsankov" style="color:#fff"><i class="fa fa-github-square"></i> /antsankov</a></p>
             </div>
           </div>
         </div>
@@ -249,7 +251,7 @@
             </div>
             <div class="col-md-8 box-ct">
               <h3 style="color:#fff"> Madhur Malhotra</h3>
-              <p style="color:#fff; margin-top:0"> Computer engineering student. Designer. <br> <b>@madhurmalhotra</b></p>
+              <p style="color:#fff; margin-top:0"> Madhur is a front-end developer hailing from (and to) Pitt who also loves do design user interfaces. PennApps XIII is his first MLH Hackathon! <br><a href="http://github.com/madhurmalhotra" style="color:#fff"><i class="fa fa-github-square"></i> /madhurmalhotra</a></p>
             </div>
           </div>
         </div>
