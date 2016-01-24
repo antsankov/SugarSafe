@@ -3,7 +3,10 @@ function se95(p, n) {
 };
 
 function prepareGraphs(patientId, data) {
-  $.ajax({url: '/analyze/' + patientId.toString(), success: function(result){
+  $.ajax({url: '/analyze/' + patientId.toString(), beforeSend:  function(){ $('#status').delay(300).fadeIn(); 
+  $('#preloader').delay(300).fadeIn('slow')}, complete: function() {$('#status').delay(300).fadeOut(); 
+  $('#preloader').delay(300).fadeOut('slow')},
+  success: function(result){
     $( "#raw_value" ).html('<h1>' + Math.round(result.mean) + '</h1>')
     $( "#patientName" ).html('<h3> Patient: ' + patientId + '</h3>')
     makeGraph(data)
