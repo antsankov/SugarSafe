@@ -7,7 +7,10 @@ function prepareGraphs(patientId, data) {
   $('#preloader').delay(300).fadeIn('slow')}, complete: function() {$('#status').delay(300).fadeOut();
   $('#preloader').delay(300).fadeOut('slow')},
   success: function(result){
+    console.log(result);
+    timestmp = new Date(result.timestmp*1000);
     $( "#raw_value" ).html('<h1>' + Math.round(result.mean) + '</h1>')
+    $( "#pred_time" ).html('<h6>' + timestmp.toLocaleFormat('%d %b, %I:%M %p') + '</h6>')
     $( "#patientName" ).html('<h3> Patient ' + patientId + '</h3>')
     makeGraph(data)
   }});
@@ -20,14 +23,14 @@ function makeGraph(data){
 
   // Config
   var dataset = "static/" + data + ".csv";
-  var width = parseInt(d3.select('#viz').style('width'), 10) - 75,
+  var width = parseInt(d3.select('#viz').style('width'), 10) - 55,
       height = parseInt(d3.select('#viz').style('height'), 10) - 45,
       padding = 30;
 
   var margin = {
-      'top': 10,
-      'right': 35,
-      'bottom': 25,
+      'top': 15,
+      'right': 25,
+      'bottom': 20,
       'left': 40
   };
 
@@ -106,7 +109,7 @@ function makeGraph(data){
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("actual");
+        .text("mg/dL");
 
     svg.append("path")
         .datum(data)
@@ -120,7 +123,7 @@ function makeGraph(data){
   });
 
   function type(d) {
-    console.log(d)
+    // console.log(d)
     d.time = new Date(d.x * 1000);
     d.actual = +d.actual
     d.pred = +d.pred

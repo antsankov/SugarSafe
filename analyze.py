@@ -56,74 +56,42 @@ patient_mat <- function(dir, patient_num) {
     return(out)
 }
 
-
-
-sq_exp <- function(x1, x2, kw = NULL, time = NULL) {
-    if(is.null(kw)) {
-        kw = rep(1, length(x1)) 
-    } else if(length(kw) == 1) {
-        kw = rep(kw, length(x1))
+pred_patient <- function(dir, patient_num, conf = 0.5) {
+    require(forecast)
+   
+    dat <- patient_mat(dir, patient_num)
+    y <- dat[,1]
+    X <- dat[,2:5]
+   
+    t_new <- seq(min(X[,1]), max(X[,1]), length.out = nrow(X)*2)
+    y_new <- numeric(2*nrow(X))
+    y_new[1] <- y[1]
+    for(i in 2:length(t_new)) {
+        temp1 <- exp(-(t_new[i] - X[X[,1] <= t_new[i],1]) * 1e-3)
+        temp2 <- y[X[,1] <= t_new[i]]
+        y_new[i] <- sum(temp2 * temp1 / sum(temp1))
     }
-    if(is.null(time)) {
-        out <- exp(-sum((x1 - x2)^2 / (2 * kw)))
-    } else {
-        temp <- abs(x1 - x2)
-        temp[time] <- ifelse(temp[time] > 12*3600, temp[time] - 12*3600, 
-            temp[time])
-        out <- exp(-sum(temp^2 / (2 * kw)))
-    } 
-    return(out)
-}
 
-kernel_mat <- function(X1, X2, kw = NULL, time = NULL) {
-    n = nrow(X1)
-    m = nrow(X2)
-    out <- matrix(0, nrow = n, ncol = m)
-    for(i in 1:n) { 
-        for(j in 1:m) {
-            out[i,j] <- sq_exp(X1[i,], X2[j,], kw = kw, time = time)
-        }
-    }
-    return(out)
-}
+    fit <- auto.arima(y_new)
+    pred <- forecast(fit, 1, level = conf)
 
-make_next_prediction <- function(dir, patient_number, is_post_meal = 0,
-    is_pre_meal = 0) {
-    require(Matrix)
-    dat <- patient_mat(dir, patient_number)
-    xhat <- as.matrix(
-        data.frame(
-            date_time = max(dat[,2]) + c(3600, 2 * 3600),
-            time = (max(dat[,2]) + c(3600, 2* 3600)) %% 3600,
-            post_meal = rep(is_post_meal, 2),
-            pre_meal = rep(is_pre_meal, 2)))
-    dat_kw <- apply(dat[,2:5], 2, sd) * 2500
-    cols <- c(2:5)[dat_kw != 0]
-    dat_kw <- dat_kw[dat_kw != 0]
-    k_xx <- kernel_mat(dat[,cols], dat[,cols], kw = dat_kw, time = 2)
-    k_xxs <- kernel_mat(dat[,cols], xhat[,cols-1], time = 2, kw = dat_kw)
-    k_xsx <- kernel_mat(xhat[,cols-1], dat[,cols], time = 2, kw = dat_kw)
-    k_xsxs <- kernel_mat(xhat[,cols-1], xhat[,cols-1], time = 2, kw = dat_kw)
-    ign_idx <- round(apply(k_xsx, 2, sum), 20) == 0
-    cov_fhat <- k_xsxs[1,1] - k_xsx[1,!ign_idx] %*% 
-        solve(k_xx[!ign_idx,!ign_idx] + 10 * diag(sum(!ign_idx))) %*% 
-        k_xxs[!ign_idx,1]
-    fhat_mean <- k_xsx[1,!ign_idx] %*% solve(k_xx[!ign_idx,!ign_idx] + 
-        0.01 * diag(sum(!ign_idx))) %*% dat[!ign_idx,1] # 0.01
-    out <- c(lwr = fhat_mean - 2 * cov_fhat, 
-        mu = fhat_mean, 
-        upr = fhat_mean + 2 * cov_fhat)
+    n <- length(t_new)
+    out <- c(
+        time = round(2 * t_new[n] - t_new[n-1], 0),
+        pred = pred$mean,
+        upper = pred$upper,
+        lower = pred$lower)
     return(out)
 }
-    """
+"""
 
 def get_prediction(patient):
     cwd = os.getcwd() + "/data"
     
     ml = SignatureTranslatedAnonymousPackage(rstring, "ml")
     
-    pred = ml.make_next_prediction(cwd,patient,0,0)
-    return jsonify({"lwr": pred[0], "mean": pred[1], "upr": pred[2]})
+    pred = ml.pred_patient(cwd,patient)
+    return jsonify({"timestmp":pred[0], "mean": pred[1], "upr": pred[2], "lwr": pred[3]})
     # print ml.patient_mat(patient)
 
      # os.path.dirname(os.getcwd())

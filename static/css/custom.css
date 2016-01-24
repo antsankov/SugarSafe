@@ -480,8 +480,8 @@ circle.dot {
 #glucose-value{
 	width: 50%;
     /* Set the margin-left and margin-right automatically set */
-    margin: 75px auto;
-		text-align: center;
+    margin: 35px auto;
+	text-align: center;
 }
 
 #patient-select {
@@ -512,6 +512,10 @@ circle.dot {
 
 #patientName > h3 {
     margin-top: 5px;
+}
+
+#pred_time {
+	color: #fa9fb5;
 }
 
 .dropdown-menu li{
