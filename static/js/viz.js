@@ -71,7 +71,7 @@ function makeGraph(data){
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-  d3.csv("static/data_correct.csv", type, function(error, data) {
+  d3.csv(dataset, type, function(error, data) {
     if (error) throw error;
 
     x.domain(d3.extent(data, function(d) {
