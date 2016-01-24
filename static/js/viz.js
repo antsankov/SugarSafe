@@ -111,10 +111,10 @@ function makeGraph(data){
         .style("text-anchor", "end")
         .text("mg/dL");
 
-    svg.append("path")
-        .datum(data)
-        .attr("class", "ActualLine")
-        .attr("d", ActualLine);
+    // svg.append("path")
+    //     .datum(data)
+    //     .attr("class", "ActualLine")
+    //     .attr("d", ActualLine);
 
     // svg.append("path")
     //   .datum(data)
@@ -125,7 +125,7 @@ function makeGraph(data){
   function type(d) {
     // console.log(d)
     d.time = new Date(d.x * 1000);
-    d.actual = +d.actual
+    // d.actual = +d.actual
     d.pred = +d.pred
     d.upper = +d.upper
     d.lower = +d.lower
