@@ -17,5 +17,9 @@ def analyze_patient(number):
 def get_patient_data(number):
     return str(number)
 
+@app.route("/test")
+def test():
+    return render_template('test.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

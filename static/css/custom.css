@@ -432,6 +432,45 @@ NO MORE TABLES!! ;)
     height: 300px;
 }
 
+.axis path,
+.axis ActualLine {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.ActualLine {
+  fill: none;
+  stroke: #ea0d6d;
+  stroke-width: 3px;
+}
+
+.axis PredictedLine {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.PredictedLine {
+  fill: none;
+  stroke: red;
+  stroke-width: 1.5px;
+}
+
+.area {
+  fill: #fa9fb5;
+  opacity: .45;
+}
+
+circle.dot {
+  fill: #FFF;
+  stroke-width: 1.5px;
+}
+
+.x.axis path {
+  display: none;
+}
+
 #glucose {
 	/*z-index: 999;*/
     background-color: #ea0d6d !important;
