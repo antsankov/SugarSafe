@@ -8,7 +8,7 @@ function prepareGraphs(patientId, data) {
   $('#preloader').delay(300).fadeOut('slow')},
   success: function(result){
     $( "#raw_value" ).html('<h1>' + Math.round(result.mean) + '</h1>')
-    $( "#patientName" ).html('<h3> Patient: ' + patientId + '</h3>')
+    $( "#patientName" ).html('<h3> Patient ' + patientId + '</h3>')
     makeGraph(data)
   }});
 
