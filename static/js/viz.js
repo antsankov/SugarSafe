@@ -66,7 +66,7 @@ function makeGraph(data){
   var yAxis = d3.svg.axis()
       .scale(y)
       .orient("left")
-      .tickFormat(d3.format(".0%"));
+      .tickFormat(d3.format(".0"));
 
   var lineLeft = d3.svg.area()
       .interpolate(interpolation)

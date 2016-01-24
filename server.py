@@ -10,7 +10,7 @@ def main_page():
 
 @app.route('/analyze/<number>')
 def analyze_patient(number):
-    result = analyze.input_health(number)
+    result = analyze.get_prediction(number)
     return result
 
 @app.route('/patient/<number>')

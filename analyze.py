@@ -117,7 +117,7 @@ make_next_prediction <- function(dir, patient_number, is_post_meal = 0,
 }
     """
 
-def input_health(patient):
+def get_prediction(patient):
     cwd = os.getcwd() + "/data"
     
     ml = SignatureTranslatedAnonymousPackage(rstring, "ml")
