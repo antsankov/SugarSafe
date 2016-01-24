@@ -92,7 +92,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-d3.csv("static/data_correct.csv", type, function(error, data) {
+d3.csv("static/patient1.csv", type, function(error, data) {
   if (error) throw error;
 
   x.domain(d3.extent(data, function(d) {
@@ -134,10 +134,6 @@ d3.csv("static/data_correct.csv", type, function(error, data) {
       .attr("class", "ActualLine")
       .attr("d", ActualLine);
 
-  svg.append("path")
-    .datum(data)
-    .attr("class", "PredictedLine")
-    .attr("d", PredictedLine);
 });
 
 function type(d) {

@@ -1,16 +1,12 @@
-function se95(p, n) {
-    return Math.sqrt(p*(1-p)/n)*1.96;
-};
-
 function prepareGraphs(patientId, data) {
   $.ajax({url: '/analyze/' + patientId.toString(), beforeSend:  function(){ $('#status').delay(300).fadeIn();
   $('#preloader').delay(300).fadeIn('slow')}, complete: function() {$('#status').delay(300).fadeOut();
   $('#preloader').delay(300).fadeOut('slow')},
   success: function(result){
     console.log(result);
-    timestmp = new Date(result.timestmp*1000);
+    timestamp = new Date(result.timestamp*1000);
     $( "#raw_value" ).html('<h1>' + Math.round(result.mean) + '</h1>')
-    $( "#pred_time" ).html('<h6>' + timestmp.toLocaleFormat('%d %b, %I:%M %p') + '</h6>')
+    $( "#pred_time" ).html('<h6>' + timestamp.toLocaleDateString() + '</h6>')
     $( "#patientName" ).html('<h3> Patient ' + patientId + '</h3>')
     makeGraph(data)
   }});
@@ -23,6 +19,8 @@ function makeGraph(data){
 
   // Config
   var dataset = "static/" + data + ".csv";
+  var actualDataset = "static/" + data + "actual.csv";
+
   var width = parseInt(d3.select('#viz').style('width'), 10) - 55,
       height = parseInt(d3.select('#viz').style('height'), 10) - 45,
       padding = 30;
@@ -51,15 +49,11 @@ function makeGraph(data){
       .scale(y)
       .orient("left");
 
-  var ActualLine = d3.svg.line()
-      .x(function(d) { return x(d.time); })
-      .y(function(d) { return y(d.actual); });
-
-  // var PredictedLine = d3.svg.line()
-  //     .x(function(d) {
-  //       return x(d.time);
-  //     })
-  //     .y(function(d){ return y(d.pred); })
+  var PredictedLine = d3.svg.line()
+      .x(function(d) {
+        return x(d.time);
+      })
+      .y(function(d){ return y(d.pred); })
 
   var area = d3.svg.area()
       .interpolate("monotone")
@@ -80,16 +74,8 @@ function makeGraph(data){
     x.domain(d3.extent(data, function(d) {
       return d.time; }));
     y.domain(d3.extent(data, function(d) {
-      return d.actual; }
+      return d.upper; }
     ));
-
-    // svg.append("svg:circle")
-    //     .datum(data)
-    //     .attr("stroke", "black")
-    //     .attr("fill", function(d) { return "black" })
-    //     .attr("cx", function(d) { return d.time })
-    //     .attr("cy", function(d) { return d.actual })
-    //     .attr("r", function(d) { return 3 });
 
     svg.append("path")
         .datum(data)
@@ -106,29 +92,41 @@ function makeGraph(data){
         .call(yAxis)
         .append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .text("mg/dL");
 
-    // svg.append("path")
-    //     .datum(data)
-    //     .attr("class", "ActualLine")
-    //     .attr("d", ActualLine);
-
-    // svg.append("path")
-    //   .datum(data)
-    //   .attr("class", "PredictedLine")
-    //   .attr("d", PredictedLine);
+    svg.append("path")
+      .datum(data)
+      .attr("class", "PredictedLine")
+      .attr("d", PredictedLine);
   });
 
-  function type(d) {
-    // console.log(d)
-    d.time = new Date(d.x * 1000);
-    // d.actual = +d.actual
-    d.pred = +d.pred
-    d.upper = +d.upper
-    d.lower = +d.lower
-    return d;
+  var ActualLine = d3.svg.line()
+      .x(function(ad) { return x(ad.time); })
+      .y(function(ad) { return y(ad.actual); });
+
+  d3.csv(actualDataset, type, function(error, data) {
+    if (error) throw error;
+
+    x.domain(d3.extent(data, function(ad) {
+      return ad.time; }));
+    y.domain(d3.extent(data, function(ad) {
+      return ad.actual; }
+    ));
+
+    svg.append("path")
+        .datum(data)
+        .attr("class", "ActualLine")
+        .attr("d", ActualLine);
+  });
+
+
+  function type(ad) {
+    console.log(ad.time)
+    ad.time = new Date(Math.round(ad.time) * 1000);
+    ad.actual = +ad.actual
+    console.log(ad)
+    return ad;
   }
 }
